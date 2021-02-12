@@ -8,21 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		CC7CCC0425D58AC600E76151 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7CCC0325D58AC600E76151 /* AppDelegate.swift */; };
-		CC7CCC0625D58AC600E76151 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7CCC0525D58AC600E76151 /* ContentView.swift */; };
 		CC7CCC0825D58ACD00E76151 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7CCC0725D58ACD00E76151 /* Assets.xcassets */; };
 		CC7CCC0B25D58ACD00E76151 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7CCC0A25D58ACD00E76151 /* Preview Assets.xcassets */; };
 		CC7CCC0E25D58ACD00E76151 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7CCC0C25D58ACD00E76151 /* Main.storyboard */; };
+		CC7CCC1925D5F04300E76151 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7CCC1825D5F04300E76151 /* EventMonitor.swift */; };
+		CC7CCC1F25D5F3E300E76151 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7CCC1E25D5F3E300E76151 /* DefaultsManager.swift */; };
+		CC7CCC2525D6EA6600E76151 /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7CCC2425D6EA6600E76151 /* ConfigureViewController.swift */; };
+		CC7CCC2A25D6F46A00E76151 /* ConfigureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7CCC2925D6F46A00E76151 /* ConfigureViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CC7CCC0025D58AC600E76151 /* MintClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC7CCC0325D58AC600E76151 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CC7CCC0525D58AC600E76151 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CC7CCC0725D58ACD00E76151 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC7CCC0A25D58ACD00E76151 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC7CCC0D25D58ACD00E76151 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC7CCC0F25D58ACD00E76151 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7CCC1025D58ACD00E76151 /* MintClock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MintClock.entitlements; sourceTree = "<group>"; };
+		CC7CCC1825D5F04300E76151 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		CC7CCC1E25D5F3E300E76151 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
+		CC7CCC2425D6EA6600E76151 /* ConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
+		CC7CCC2925D6F46A00E76151 /* ConfigureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigureViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +62,10 @@
 			isa = PBXGroup;
 			children = (
 				CC7CCC0325D58AC600E76151 /* AppDelegate.swift */,
-				CC7CCC0525D58AC600E76151 /* ContentView.swift */,
+				CC7CCC1825D5F04300E76151 /* EventMonitor.swift */,
+				CC7CCC2425D6EA6600E76151 /* ConfigureViewController.swift */,
+				CC7CCC2925D6F46A00E76151 /* ConfigureViewController.xib */,
+				CC7CCC1E25D5F3E300E76151 /* DefaultsManager.swift */,
 				CC7CCC0725D58ACD00E76151 /* Assets.xcassets */,
 				CC7CCC0C25D58ACD00E76151 /* Main.storyboard */,
 				CC7CCC0F25D58ACD00E76151 /* Info.plist */,
@@ -132,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7CCC0E25D58ACD00E76151 /* Main.storyboard in Resources */,
+				CC7CCC2A25D6F46A00E76151 /* ConfigureViewController.xib in Resources */,
 				CC7CCC0B25D58ACD00E76151 /* Preview Assets.xcassets in Resources */,
 				CC7CCC0825D58ACD00E76151 /* Assets.xcassets in Resources */,
 			);
@@ -144,8 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC7CCC0625D58AC600E76151 /* ContentView.swift in Sources */,
 				CC7CCC0425D58AC600E76151 /* AppDelegate.swift in Sources */,
+				CC7CCC1925D5F04300E76151 /* EventMonitor.swift in Sources */,
+				CC7CCC1F25D5F3E300E76151 /* DefaultsManager.swift in Sources */,
+				CC7CCC2525D6EA6600E76151 /* ConfigureViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
