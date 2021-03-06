@@ -100,7 +100,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         eventMonitor?.start()
     }
     
-    private func closePopover(_ sender: AnyObject?) {
+    @objc func closePopover(_ sender: AnyObject?) {
         popover.performClose(sender)
         eventMonitor?.stop()
     }
@@ -125,7 +125,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private func updateUI(price: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.statusBarItem.button?.title = String(price) + " gwei"
+            var newTitle: String = String(price)
+            if Bool(DefaultsManager.shared.showGweiText!) {
+                newTitle += " gwei"
+            }
+            self?.statusBarItem.button?.title = newTitle
         }
     }
     
@@ -140,7 +144,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let webData = data {
                 if let decodedResponse = try? JSONDecoder().decode(EtherscanResponse.self, from: webData) {
-                    print(decodedResponse)
                     DispatchQueue.main.async {
                         self.updateUI(price: decodedResponse.result[gasType])
                     }
