@@ -8,6 +8,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="ConfigureViewController" customModule="MintClock" customModuleProvider="target">
             <connections>
+                <outlet property="alertSetSwitch" destination="jZb-bs-aA5" id="xUm-tT-ul9"/>
+                <outlet property="alertValueField" destination="J0o-vw-8UR" id="ctc-X0-iED"/>
                 <outlet property="etherscanKeyField" destination="QhB-Ky-KO3" id="dqF-HW-ah2"/>
                 <outlet property="gasTypes" destination="P8Y-Oc-uR1" id="XAc-6j-L5U"/>
                 <outlet property="showGweiSwitch" destination="MtP-PE-jxv" id="wln-Hg-dp8"/>
@@ -17,11 +19,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
-            <rect key="frame" x="0.0" y="0.0" width="440" height="157"/>
+            <rect key="frame" x="0.0" y="0.0" width="440" height="196"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="saI-Rb-5pt">
-                    <rect key="frame" x="18" y="119" width="117" height="16"/>
+                    <rect key="frame" x="18" y="158" width="117" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Etherscan API key:" id="PsX-SX-iAn">
                         <font key="font" usesAppearanceFont="YES"/>
@@ -30,7 +32,7 @@
                     </textFieldCell>
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhB-Ky-KO3">
-                    <rect key="frame" x="182" y="116" width="238" height="21"/>
+                    <rect key="frame" x="182" y="155" width="238" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" placeholderString="AU9S1UDQYT..." drawsBackground="YES" id="gQE-hy-AGW">
                         <font key="font" metaFont="system"/>
@@ -39,7 +41,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3tE-Kg-aQ4">
-                    <rect key="frame" x="18" y="90" width="131" height="16"/>
+                    <rect key="frame" x="18" y="129" width="131" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Price type to display:" id="Kj5-Da-rgk">
                         <font key="font" metaFont="system"/>
@@ -48,7 +50,7 @@
                     </textFieldCell>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8Y-Oc-uR1">
-                    <rect key="frame" x="179" y="84" width="245" height="25"/>
+                    <rect key="frame" x="179" y="123" width="245" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="ProposeGasPrice" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="CK1-bf-v0h" id="TuQ-wc-Qmq">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -63,7 +65,7 @@
                     </popUpButtonCell>
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qmh-Qp-tCY">
-                    <rect key="frame" x="18" y="63" width="85" height="16"/>
+                    <rect key="frame" x="18" y="102" width="85" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="Show &quot;gwei&quot;:" id="rrn-h6-eAO">
                         <font key="font" metaFont="system"/>
@@ -72,7 +74,7 @@
                     </textFieldCell>
                 </textField>
                 <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" state="on" translatesAutoresizingMaskIntoConstraints="NO" id="MtP-PE-jxv">
-                    <rect key="frame" x="180" y="58" width="42" height="25"/>
+                    <rect key="frame" x="180" y="97" width="42" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </switch>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xe4-oR-ex0">
@@ -86,8 +88,47 @@
                         <action selector="doneButtonPressed:" target="-2" id="Z8M-SW-uCD"/>
                     </connections>
                 </button>
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Zpn-3H-AHA">
+                    <rect key="frame" x="20" y="88" width="400" height="5"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </box>
+                <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="jZb-bs-aA5">
+                    <rect key="frame" x="180" y="58" width="42" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <action selector="enableAlertPressed:" target="-2" id="JF8-MW-CJi"/>
+                    </connections>
+                </switch>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3FW-vu-mSf">
+                    <rect key="frame" x="20" y="63" width="114" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Enable price alert:" id="dJb-Zq-0a0">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J0o-vw-8UR">
+                    <rect key="frame" x="228" y="60" width="44" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="100" drawsBackground="YES" id="ydn-aV-FdR">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D5y-8P-rjT">
+                    <rect key="frame" x="278" y="63" width="33" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="gwei" id="KHG-gt-oZh">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
-            <point key="canvasLocation" x="262" y="70.5"/>
+            <point key="canvasLocation" x="262" y="90"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="tsD-Ej-7se"/>
     </objects>
 </document>

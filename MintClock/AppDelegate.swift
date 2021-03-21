@@ -33,7 +33,7 @@ struct GasData: Codable, Hashable {
 }
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
     var statusBarItem: NSStatusItem!
     private let popover = NSPopover()
     private var eventMonitor: EventMonitor?
@@ -147,6 +147,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     DispatchQueue.main.async {
                         self.updateUI(price: decodedResponse.result[gasType])
                     }
+                    self.showNotification(price: decodedResponse.result[gasType])
                     return
                 }
             }
@@ -154,5 +155,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
             
         }.resume()
+    }
+
+    func showNotification(price: String) -> Void {
+        guard let alertValue = Int(DefaultsManager.shared.alertValue ?? "0") else { return }
+        if DefaultsManager.shared.alertSet == true && Int(price)! <= alertValue {
+            let notification = NSUserNotification()
+            NSUserNotificationCenter.default.delegate = self
+            notification.title = "Gas price alert!"
+            notification.subtitle = "Current price: \(price) gwei"
+            notification.soundName = NSUserNotificationDefaultSoundName
+            NSUserNotificationCenter.default.delegate = self
+            NSUserNotificationCenter.default.deliver(notification)
+            DefaultsManager.shared.alertSet = false
+        }
+    }
+
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+        return true
     }
 }

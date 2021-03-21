@@ -2,7 +2,7 @@
 
 The Ethereum gas price in your menu bar.
 
-![](https://i.imgur.com/wHNuLg1.png)
+<img src="https://i.imgur.com/cL7YTj5.png" width="460" />
 
 ### Attributions
 

@@ -12,7 +12,7 @@ class DefaultsManager {
     public static let shared = DefaultsManager()
 
     private enum DefaultsKeys: String {
-        case gasType, etherscanAPIKey, showGweiText
+        case gasType, etherscanAPIKey, showGweiText, alertSet, alertValue
     }
 
     // one of: ProposedGasPrice, FastGasPrice, SafeGasPrice
@@ -29,5 +29,15 @@ class DefaultsManager {
     public var showGweiText: Bool? {
         get { return UserDefaults.standard.bool(forKey: DefaultsKeys.showGweiText.rawValue) }
         set { UserDefaults.standard.set(newValue, forKey: DefaultsKeys.showGweiText.rawValue) }
+    }
+
+    public var alertSet: Bool? {
+        get { return UserDefaults.standard.bool(forKey: DefaultsKeys.alertSet.rawValue) }
+        set { UserDefaults.standard.set(newValue, forKey: DefaultsKeys.alertSet.rawValue) }
+    }
+
+    public var alertValue: String? {
+        get { return UserDefaults.standard.string(forKey: DefaultsKeys.alertValue.rawValue) }
+        set { UserDefaults.standard.set(newValue, forKey: DefaultsKeys.alertValue.rawValue) }
     }
 }
