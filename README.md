@@ -6,4 +6,8 @@ The Ethereum gas price in your menu bar.
 
 ### Attributions
 
-Big thanks to [@inderdhir](https://github.com/inderdhir) for the use of [DatWeatherDoe](https://github.com/inderdhir/DatWeatherDoe) as a template while I learn the MacOS app ropes.
+Big thanks to [@inderdhir](https://github.com/inderdhir) for the use of [DatWeatherDoe](https://github.com/inderdhir/DatWeatherDoe) as a template.
+
+### Privacy Policy
+
+No personal information is collected via this application. Etherscan API keys remain only on your device. The end.
